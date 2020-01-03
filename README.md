@@ -1,8 +1,13 @@
-#### 文件字段说明
+#### Data set description
+Each row of data represents a user association record. 
 
-每一行的数据代表一条用户连接Wi-Fi的记录，字段（按次序从左到右用制表符`\t`隔开）分别是：
+The fields (from left to right, separated by '\t') are:
 
-| asso_id            | user_name    | client_mac      | ap_id                | bytes                        | RSSI                                                   | conn_time    | disconn_time |
-| ------------------ | ------------ | --------------- | -------------------- | ---------------------------- | ------------------------------------------------------ | ------------ | ------------ |
-| 连接记录的id，唯一 | 用户名，唯一 | 用户设备MAC地址 | AP的id(8-id or 7-id) | 本次连接产生的流量，单位字节 | radio signal strength , 如果值为-1代表本条记录无此字段 | 开始连接时间 | 断开连接时间 |
-
+asso_id: The unique ID for the association record;
+user_name: The user name, which has been be encrypted;
+client_mac: MAC address of the association device;
+ap_id: The unique ID of the AP that has been associated (7-id or 8-id, which means the AP is under the control of server 7 or server 8);
+bytes: The traffic generated during this association, in bytes;
+RSSI: Radio Signal Strength, where if the value equals '-1', it means there is no valid value is collected for this association record;
+conn_time: The connection time of the association;
+disconn_time: The disconnection time of the association.
